@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公司主页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+        .mySlides {
+            display: none;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @-webkit-keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>欢迎来到我们的公司</h1>
+    </header>
+    <nav>
+        <a href="#home">主页</a>
+        <a href="#about">关于我们</a>
+        <a href="#products">产品展示</a>
+        <a href="#contact">联系我们</a>
+        <a href="#reviews">客户评价</a>
+    </nav>
+    <div class="container" id="home">
+        <h2>公司简介</h2>
+        <p>这里是公司的简要介绍。</p>
+    </div>
+    <div class="container" id="about">
+        <h2>关于我们</h2>
+        <p>这里是关于我们的详细信息。</p>
+    </div>
+    <div class="container" id="products">
+        <h2>产品展示</h2>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="images/product1.jpg" style="width:100%">
+                <div class="text">产品1描述</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="images/product2.jpg" style="width:100%">
+                <div class="text">产品2描述</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="images/product3.jpg" style="width:100%">
+                <div class="text">产品3描述</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <h2>产品视频展示</h2>
+        <video width="600" controls>
+            <source src="videos/promo.mp4" type="video/mp4">
+            您的浏览器不支持HTML5视频标签。
+        </video>
+    </div>
+    <div class="container" id="contact">
+        <h2>联系我们</h2>
+        <p>公司地址: henan</p>
+        <p>电话: 110120</p>
+        <p>电子邮件: pzg@email.com</p>
+        <form>
+            <label for="name">姓名:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">电子邮件:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message">信息:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+            <input type="submit" value="发送">
+        </form>
+    </div>
+    <div class="container" id="reviews">
+        <h2>客户评价</h2>
+        <p>这里展示客户的反馈和评价。</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 公司名称. 版权所有.</p>
+    </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>
+
